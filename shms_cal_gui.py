@@ -9,7 +9,7 @@ from ROOT import TRootEmbeddedCanvas,TApplication
 from ROOT import gROOT, TCanvas
 
 XVALS,YVALS=[],[]
-START=28
+START=32
 NCHAN=224
 
 def getScalars():

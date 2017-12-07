@@ -35,23 +35,26 @@ def getScalars():
             zvals.append(float(info[1])/1000)
            
     ix,iy=1,1
+    nn = 0
     for ii in range (len(zvals)):
         if ii>=START:
-            if ii==START+NCHAN : break
+            if ii==START+NCHAN+4 : break
+            if ii==14 or ii==15 or ii==30 or ii==31 : continue;
             XVALS.append(ix)
             YVALS.append(iy)
             pzvals.append(zvals[ii])
-            pchan.append(ii-START+1)
+            pchan.append(nn+1)
             
-            #print pchan[ii-START],
-            #print pzvals[ii-START],
-            #print XVALS[ii-START],
-            #print YVALS[ii-START]
+            #print pchan[nn],
+            #print pzvals[nn],
+            #print XVALS[nn],
+            #print YVALS[nn]
         
-            if pchan[ii-START]==14*ix:
+            if pchan[nn]==14*ix:
                 iy=0
                 ix+=1
             iy+=1 
+            nn+=1
     #print 'EndEvent'
     #print len(pzvals),
     #print len(XVALS),
